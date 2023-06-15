@@ -1,0 +1,22 @@
+@mixin container-xs {
+	max-width: 1100px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+@mixin container-m {
+	max-width: 1340px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+$yellow: #dca22d;
+$orange: #de800f;
+$red: #c92600;
+$blue: #2f4399;
+$bej: #e0ccaa;
+$lightyellow: #f3c957;
+$lightblue: #9da5c9;
+$green: #39654e;
+$cyan: #51b8b4;
+$greenish: #43927d;

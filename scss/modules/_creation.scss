@@ -1,0 +1,51 @@
+.creation {
+	background: #43927d;
+	position: relative;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		right: 0;
+		background-image: url("../assets/img/undertalemenu.png");
+		background-position: right 5px;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		@media (max-width: 920px) {
+			display: none;
+		}
+	}
+	&:after {
+		content: "";
+		width: 100%;
+		height: 65px;
+		display: block;
+		background: #dca42d;
+		margin-top: 45px;
+	}
+	&__container {
+		@include container-xs;
+		padding: 60px 40px;
+		background-image: linear-gradient(to bottom, #babbb3 0%, #babbb3 95%, #767676 100%);
+		border-radius: 0 0 0 7px;
+	}
+
+	&__title {
+		font-family: "Epilepsy Sans";
+		font-weight: bold;
+		font-size: calc(35 / 16 * 1em);
+		margin-bottom: 0.7em;
+	}
+
+	&__des {
+		font-size: calc(14 / 16 * 1em);
+		line-height: 1.4;
+	}
+
+	&__title,
+	&__des {
+		max-width: 450px;
+		text-shadow: 0 0 5px #babbb3;
+	}
+}

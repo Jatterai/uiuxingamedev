@@ -1,0 +1,33 @@
+.quote {
+	background: $yellow;
+	font-style: italic;
+	&__container {
+		@include container-xs;
+		padding-block: 50px;
+	}
+	&__it {
+		font-size: 1.8em;
+		margin-bottom: 1em;
+		&::before,
+		&::after {
+			font-family: monospace;
+			font-weight: 900;
+			font-size: 100px;
+		}
+		&::before {
+			content: "“";
+			display: block;
+		}
+		&::after {
+			content: "”";
+			display: block;
+			width: fit-content;
+			margin-left: auto;
+		}
+	}
+	&__name {
+		width: fit-content;
+		margin-left: auto;
+		font-size: 1.1em;
+	}
+}

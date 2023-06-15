@@ -1,0 +1,202 @@
+@import "./null";
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+@import "../assets/fonts/stylesheet.css";
+@import "./mixins";
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: "Roboto";
+	position: relative;
+	&.locked {
+		overflow: hidden;
+	}
+}
+
+.secret {
+	max-width: 70vw;
+	word-wrap: break-word;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	transform-origin: center;
+	font-size: 140px;
+	font-weight: 800;
+	color: hotpink;
+	background: yellow;
+	padding: 0.1em 0.3em;
+	border-radius: 40px;
+	box-shadow: 0px 0px 0px 40px rgb(114, 203, 223);
+	animation: showing 1s 1 forwards;
+	z-index: 1000;
+}
+
+@keyframes showing {
+	0% {
+		scale: 0;
+		rotate: -1800deg;
+	}
+	100% {
+		scale: 1;
+		rotate: 0;
+	}
+}
+.blackbtn {
+	display: block;
+	background: black;
+	color: white;
+	text-transform: uppercase;
+	padding: 0.6em 1.3em;
+	border-radius: 30px;
+	letter-spacing: 0.2em;
+	cursor: pointer;
+	transition: 200ms;
+	box-shadow: 0px 4px #c6b10f;
+	&:active {
+		top: 2px;
+		box-shadow: 0px 2px #c6b10f;
+	}
+}
+.btn-orange {
+	background-color: $orange;
+	color: white;
+	text-transform: uppercase;
+	padding: 0.7em 1em;
+	border-radius: 7px;
+	cursor: pointer;
+}
+.wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.upbtn {
+	width: 70px;
+	aspect-ratio: 1 / 1;
+	line-height: 0.3;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	opacity: 0;
+	visibility: hidden;
+	appearance: none;
+	cursor: pointer;
+	z-index: 100;
+	transition: all 202ms ease-in-out, scale 100ms;
+	background: url("../assets/img/upbtn.PNG") 0 0 / auto 100% no-repeat;
+	filter: drop-shadow(-1px 0px 0px rgb(255, 255, 255)) drop-shadow(0px 1px 0px rgb(255, 255, 255));
+	&:active {
+		scale: 0.9;
+	}
+	&.shown {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+._anim {
+	overflow: hidden;
+	& > span {
+		display: block;
+	}
+	&.on {
+		._anim_to-top,
+		._anim_to-right,
+		._anim_to-left {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+}
+._anim_to-top {
+	overflow: hidden;
+	position: relative;
+	transform: translate(0, 120%);
+	opacity: 0;
+	transition: 400ms ease-in-out 0s;
+	&.on {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+._anim_to-right {
+	overflow: hidden;
+	position: relative;
+	transform: translate(-120%, 0%);
+	opacity: 0;
+	transition: 400ms ease-in-out 0s;
+	&.on {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+._anim_to-left {
+	overflow: hidden;
+	position: relative;
+	transform: translate(120%, 0%);
+	opacity: 0;
+	transition: 400ms ease-in-out 0s;
+	&.on {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+._anim_op {
+	opacity: 0;
+	visibility: hidden;
+	&.on {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+._anim_big {
+	overflow: hidden;
+	transform: scale(0, 1);
+	opacity: 0;
+	transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+	&.on {
+		transform: scale(1, 1);
+		opacity: 1;
+	}
+}
+
+._anim_to-bottom {
+	transition: 0.5s ease-in;
+	transition-delay: 1s;
+	max-height: 50px;
+	._anim_content {
+	}
+	&.on {
+		max-height: 800px;
+	}
+}
+
+.maxwell {
+	display: block;
+	width: 140vmin;
+	max-width: 1000px;
+	aspect-ratio: 1.1/1;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-55%, -50%) scale(0);
+	z-index: 200;
+	transition: 300ms;
+	filter: drop-shadow(0 0 20px white) drop-shadow(0 0 40px hotpink);
+	&.play {
+		transform: translate(-58%, -55%) scale(1);
+	}
+}

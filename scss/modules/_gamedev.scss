@@ -1,0 +1,77 @@
+.gamedev {
+	position: relative;
+	background-color: #2f4399;
+	background-image: url("../assets/img/dudes.png"), url("../assets/img/blast.png"),
+		url("../assets/img/bubbleselft.png"), url("../assets/img/bubbleseright.png");
+	background-position: right bottom, 65% 20%, left top, right center;
+	background-repeat: no-repeat;
+	background-size: auto 85%, auto, auto 100%, auto 80%;
+	overflow: hidden;
+
+	@media (max-width: 950px) {
+		background-image: linear-gradient(to bottom, rgba(47, 66, 153, 0.6) 0%, rgba(47, 66, 153, 0.6) 100%),
+			url("../assets/img/bubbleselft.png"), url("../assets/img/bubbleseright.png");
+		background-position: left top, left top, right center;
+		background-repeat: no-repeat;
+		background-size: 100% 100%, auto 100%, auto 80%;
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: clamp(45px, 20vh, 115px);
+		position: absolute;
+		bottom: 0;
+		background: url("../assets/img/nfo.png") 0 0 / auto 100% no-repeat;
+	}
+
+	&__container {
+		@include container-xs;
+		display: grid;
+		grid-template-columns: 55% 1fr;
+		@media (max-width: 950px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__info {
+		overflow: hidden;
+		padding: clamp(50px, 20vh, 120px) 20px;
+		box-shadow: -30px 0px 25px rgba(0, 0, 0, 0.708);
+		*:not(:last-child) {
+			margin-bottom: calc(20 / 16 * 1rem);
+		}
+
+		@for $i from 1 to 5 {
+			& > *:nth-child(#{$i}) {
+				transition-delay: (200 * $i) + ms;
+			}
+		}
+	}
+
+	&__title {
+		max-width: 90vw;
+		img {
+			width: 100%;
+		}
+	}
+
+	&__subtitle {
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		color: antiquewhite;
+	}
+
+	&__description {
+		max-width: 80%;
+		color: #ffc81b;
+		font-size: calc(11 / 16 * 1rem);
+		letter-spacing: 0.05em;
+	}
+
+	&__btn {
+		position: relative;
+		top: 0;
+	}
+}

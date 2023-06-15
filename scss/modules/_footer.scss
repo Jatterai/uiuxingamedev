@@ -1,0 +1,77 @@
+.footer {
+	font-size: calc(12 / 16 * 1em);
+	font-weight: 500;
+	&__container {
+		@include container-m;
+		padding-block: clamp(30px, calc(62 / 1440 * 100vw), 62px);
+		max-width: 1280px;
+	}
+
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+
+	&__phones {
+		h5 {
+			text-transform: uppercase;
+			margin-bottom: 1.2em;
+		}
+		li:not(:last-child) {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	&__media {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 20px;
+	}
+
+	&__fcb {
+		background: url("../assets/img/facebook.svg");
+	}
+
+	&__snp {
+		background: url("../assets/img/snapchat.svg");
+	}
+
+	&__icon {
+		position: relative;
+		cursor: pointer;
+		display: block;
+		width: 40px;
+		aspect-ratio: 1/1;
+		background-position: center;
+		background-size: auto 75%;
+		background-repeat: no-repeat;
+		border: 2px solid black;
+		border-radius: 7px;
+	}
+
+	&__over {
+		position: relative;
+		font-family: "Epilepsy Sans";
+		font-weight: 900;
+		font-size: 2em;
+		text-transform: uppercase;
+		text-align: center;
+		padding-top: 2em;
+		color: $red;
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 100vw;
+			height: 2px;
+			background: black;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

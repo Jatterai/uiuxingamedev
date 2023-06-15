@@ -1,0 +1,86 @@
+.contacts {
+	background: $yellow;
+	&__container {
+		@include container-xs;
+		padding-block: 60px;
+		@media (max-width: 854px) {
+			padding-block: 20px;
+		}
+	}
+
+	&__box {
+		background-image: linear-gradient(to bottom, $lightyellow 0%, $lightyellow 47%, $lightblue 53%, $lightblue 100%);
+		border-radius: 7px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.292);
+		padding: 100px 60px;
+		@media (min-width: 1020px) {
+			background-image: url("../assets/img/contactsbg.png"),
+				linear-gradient(to bottom, $lightyellow 0%, $lightyellow 47%, $lightblue 53%, $lightblue 100%);
+			background-position: top 0% right 10%, 0 0;
+			background-size: auto 100%, 100% 100%;
+			background-repeat: no-repeat;
+		}
+		@media (max-width: 954px) {
+			padding: 40px;
+		}
+	}
+
+	&__form {
+	}
+}
+.feedback {
+	&__title {
+		font-size: calc(24 / 16 * 1em);
+		font-weight: 600;
+		margin-bottom: 1em;
+	}
+
+	&__desc {
+		font-size: calc(14 / 16 * 1em);
+		margin-bottom: 2em;
+	}
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		button {
+		}
+	}
+	&__name,
+	&__mail {
+		flex: 1 1 40%;
+	}
+	&__name,
+	&__mail,
+	&__textarea {
+		transition: 300ms;
+		background-color: $bej;
+		padding: 1em;
+		border-radius: 10px;
+		box-shadow: 0 -2px 2px $lightblue;
+		&:focus {
+			outline: none;
+			box-shadow: 0 -2px 2px $lightblue, inset 0px 15px 20px 0px #e7b689;
+		}
+	}
+	&__name {
+	}
+
+	&__mail {
+	}
+
+	&__textarea {
+		flex: 1 0 100%;
+		resize: none;
+	}
+	@media (min-width: 1020px) {
+		max-width: 430px;
+	}
+	._anim-late {
+		span {
+			transition-delay: 200ms;
+		}
+	}
+}
+.form {
+}

@@ -1,0 +1,127 @@
+$stretch: scaleX(1.2);
+
+.ui {
+	position: relative;
+	background: #43927d;
+	font-family: "Epilepsy Sans";
+	font-weight: 900;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 0.03em;
+	font-size: 2rem;
+	background-origin: content-box;
+
+	&:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		aspect-ratio: 8 / 1;
+		display: block;
+		z-index: 2;
+		bottom: 0;
+		left: 0;
+		background: url("../assets/img/mario.png") center bottom/ 98% auto no-repeat;
+	}
+	&__stats {
+		transform-origin: top left;
+		text-shadow: -1px 0 0 white;
+		letter-spacing: 0.1em;
+		margin: 0;
+		padding: 0;
+		line-height: 0.8;
+	}
+	&__container {
+		@include container-xs;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		@media (max-width: 950px) {
+			background-image: none;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2, auto);
+		}
+	}
+
+	&__title {
+		text-transform: uppercase;
+		font-size: clamp(204px, calc(408 / 1440 * 100vw), 408px);
+		line-height: 1;
+		font-family: "Hussar Plate";
+		font-style: oblique;
+		transform: translateX(-10%);
+		color: #ffc3ba;
+		@media (max-width: 950px) {
+			transform: none;
+			width: fit-content;
+			margin: 0 auto;
+		}
+	}
+
+	&__row {
+		padding-top: 50px;
+		span:not(:last-of-type) {
+			margin-right: 1.8em;
+		}
+		display: grid;
+		grid-template-rows: 175px auto 150px;
+		@media (max-width: 950px) {
+			&:first-child {
+				grid-template-rows: 175px auto;
+			}
+		}
+	}
+	&__blue {
+		position: relative;
+		background: linear-gradient(to top, #7085ff 0%, #7085ff 100%);
+		.ui__stats {
+			justify-self: end;
+			transform-origin: top right;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 3px;
+			height: 30%;
+			background: #ffc3ba;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	&__menu {
+		text-align: center;
+		justify-self: center;
+		align-self: center;
+		font-size: 1.1em;
+		ul {
+			margin-bottom: 1em;
+		}
+		li {
+			position: relative;
+			&:hover {
+				&:before {
+					content: "";
+					display: block;
+					width: 0.75em;
+					aspect-ratio: 1 / 1;
+					background: url("../assets/img/mushroom.png") 0 0 / auto 100% no-repeat;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: -1.5em;
+				}
+			}
+			&:not(:last-child) {
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+
+	&__values {
+		margin-left: 0.5em;
+	}
+
+	&__pic {
+	}
+}

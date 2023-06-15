@@ -1,0 +1,94 @@
+@import "./includes/rules";
+
+@import "./modules/header";
+@import "./modules/gamedev";
+@import "./modules/gamedis";
+@import "./modules/creation";
+@import "./modules/_ui";
+@import "./modules/_design";
+@import "./modules/_advice";
+@import "./modules/_quote";
+@import "./modules/_psy";
+@import "./modules/_logic";
+@import "./modules/_footer";
+
+.youwin {
+	background: $greenish;
+	img {
+		width: 100%;
+	}
+}
+
+.uxtitle {
+	position: relative;
+	background: url("../assets/img/mariobg.png");
+	background-size: 100% auto;
+	aspect-ratio: 1439/ 613;
+	border-top: 40px solid $greenish;
+	border-bottom: 40px solid $greenish;
+	box-sizing: content-box;
+	&__container {
+	}
+
+	&__title {
+		font-size: clamp(50px, calc(170 / 1440 * 100vw), 170px);
+		font-family: "Hussar Plate";
+		text-shadow: 1px 0px black, 1px 1px black, -1px -1px black, 0px 1px black;
+		font-style: oblique;
+		position: absolute;
+		bottom: 5%;
+		left: 30%;
+	}
+}
+
+.whatis {
+	position: relative;
+	background: url("../assets/img/pipebg.png");
+	background-size: 100% auto;
+	aspect-ratio: 1439/ 613;
+	&__container {
+		@include container-xs;
+	}
+	&__img {
+		border: 5px solid grey;
+		width: 15%;
+		padding-right: 15px;
+		aspect-ratio: 1 /1;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		right: 5%;
+		top: 50%;
+		transform: translateY(-50%);
+		img {
+			width: 100%;
+		}
+		@media (max-width: 900px) {
+			display: none;
+		}
+	}
+	&__content {
+		width: 75%;
+		max-width: 900px;
+		margin-left: auto;
+		padding-top: clamp(50px, calc(100 / 1440 * 100vw), 100px);
+		padding-bottom: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	._fw {
+		font-weight: 900;
+		font-size: 1.1em;
+	}
+	p:not(:last-child) {
+		margin-bottom: 2em;
+	}
+	ul {
+		margin-bottom: 2em;
+		padding-left: 2em;
+	}
+	li:not(:last-child) {
+		margin-bottom: 0.7em;
+	}
+}

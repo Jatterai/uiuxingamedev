@@ -1,0 +1,256 @@
+@import "../includes/rules";
+@import "../modules/_header";
+@import "../modules/_footer";
+@import "../modules/evolution";
+@import "../modules/beginning";
+@import "../modules/dude";
+
+.dudette {
+	display: flex;
+	background-color: $orange;
+	&_txt {
+	}
+
+	&__container {
+		@include container-xs;
+		padding: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@media (min-width: 900px) {
+			flex: 1 0 50%;
+		}
+	}
+
+	&__title {
+		font-size: calc(24 / 16 * 1em);
+		font-weight: 900;
+		color: $bej;
+		margin-bottom: 1em;
+		@media (min-width: 900px) {
+			font-size: calc(30 / 16 * 1em);
+		}
+	}
+
+	&__txt {
+		line-height: 1.5;
+		&:not(:last-of-type) {
+			margin-bottom: 1em;
+		}
+	}
+
+	&__picture {
+		display: none;
+		@media (min-width: 900px) {
+			display: block;
+			flex: 0 1 auto;
+		}
+		img {
+			height: 100%;
+		}
+	}
+}
+
+.easterEgg {
+	background: $green;
+	&_decoration {
+		background: $orange;
+		display: none;
+		@media (min-width: 900px) {
+			display: block;
+			padding-bottom: 50px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&__container {
+		@include container-xs;
+		padding-block: 50px;
+		@media (min-width: 900px) {
+			max-width: 80%;
+			font-size: calc(24 / 16 * 1em);
+		}
+	}
+
+	&__txt {
+		font-family: "Epilepsy Sans";
+		font-weight: 900;
+		line-height: 1.5;
+		color: $bej;
+	}
+}
+
+.windows {
+	background: linear-gradient(to bottom, $orange 0%, $orange 47%, $bej 53%, $bej 100%);
+	&__container {
+		@include container-xs;
+		padding-block: clamp(50px, calc(100 / 1440 * 100vw), 100px);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__slider {
+		flex: 0 0 80%;
+	}
+	&__btn {
+		flex: 0 0 50px;
+		aspect-ratio: 1 / 1.2;
+		background: url("../assets/img/arrow.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		translate: 200ms;
+		&:active {
+			scale: 0.9;
+		}
+		&#left {
+			transform: scaleX(-1);
+		}
+		@media (max-width: 746px) {
+			flex: 0 0 30px;
+		}
+	}
+}
+.slider {
+	transition: 100ms;
+	aspect-ratio: 938 / 527;
+	background-size: cover;
+}
+
+.development {
+	background: $bej;
+	&__container {
+		@include container-xs;
+		padding-block: clamp(50px, calc(100 / 1440 * 100vw), 100px);
+		display: flex;
+		@media (max-width: 862px) {
+			display: block;
+		}
+	}
+
+	&__main {
+		position: relative;
+		flex: 1 1 35%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 2em;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 120%;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 1px;
+			background: black;
+		}
+	}
+
+	&__header {
+		flex: 0 0 auto;
+	}
+
+	&__title {
+		font-size: calc(40 / 16 * 1em);
+		font-weight: 900;
+		white-space: nowrap;
+		margin-bottom: 0.5em;
+		._color {
+			color: $green;
+		}
+	}
+
+	&__desc {
+		transition-delay: 100ms;
+	}
+
+	&__quote {
+		position: relative;
+		overflow: visible;
+		transition-delay: 200ms;
+
+		&:before,
+		&:after {
+			font-family: "Epilepsy Sans";
+			display: block;
+			font-weight: 900;
+			font-size: clamp(30px, calc(60 / 16 * 1em), 60px);
+			position: absolute;
+		}
+		&::before {
+			content: "“";
+			left: 0;
+			bottom: 95%;
+		}
+		&:after {
+			content: "”";
+			right: 0;
+			top: 105%;
+		}
+		@media (max-width: 862px) {
+			margin-top: 20px;
+			margin-left: auto;
+			width: fit-content;
+			font-size: 0.9em;
+			&::before,
+			&::after {
+				position: relative;
+			}
+			&::before {
+				line-height: 0.8;
+			}
+			&::after {
+				width: fit-content;
+				margin-left: auto;
+			}
+		}
+	}
+
+	&__info {
+		padding: 0 2em;
+		font-size: calc(15 / 16 * 1em);
+	}
+
+	&__list {
+		li {
+			display: flex;
+			align-items: start;
+			gap: 1em;
+			line-height: 1.5;
+			&:before {
+				content: "";
+				flex: 0 0 auto;
+				display: block;
+				width: 1em;
+				aspect-ratio: 1 / 1;
+				border-radius: 50%;
+				background: black;
+				margin-top: 0.3em;
+			}
+			&:not(:last-child) {
+				margin-bottom: 1em;
+			}
+			@for $i from 1 to 4 {
+				&:nth-child(#{$i}) {
+					transition-delay: (100 * $i) + ms;
+				}
+			}
+		}
+	}
+
+	&__gtu {
+		margin-top: clamp(30px, calc(120 / 1440 * 100vw), 120px);
+
+		p:not(:last-child) {
+			margin-bottom: 1em;
+		}
+		p:last-child {
+			transition-delay: 200ms;
+		}
+	}
+}

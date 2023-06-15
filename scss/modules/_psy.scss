@@ -1,0 +1,49 @@
+.psy {
+	background: #e0ccaa;
+
+	@media (min-width: 900px) {
+		background-image: url("../assets/img/mobilegame.png");
+		background-position: top right;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+	}
+	&__container {
+		@include container-xs;
+		max-width: 1200px;
+		padding-block: clamp(50px, calc(130 / 1440 * 100vw), 130px);
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: clamp(35px, calc(50 / 1440 * 100vw), 49.5px);
+		margin-bottom: 1.5em;
+		._color {
+			font-weight: 900;
+			color: $red;
+		}
+	}
+	&__list {
+		font-weight: 600;
+		font-size: calc(15 / 16 * 1em);
+		line-height: 1.3;
+		padding: 0 35px;
+		border-left: 10px solid $red;
+		width: 90%;
+		li:not(:last-child) {
+			margin-bottom: 2em;
+		}
+		li {
+			transform-origin: center left;
+		}
+		@for $i from 1 to 6 {
+			li:nth-child(#{$i}) {
+				transition-delay: (100 * $i) + ms;
+			}
+		}
+	}
+	&__info {
+		@media (min-width: 900px) {
+			max-width: 50%;
+		}
+	}
+}
