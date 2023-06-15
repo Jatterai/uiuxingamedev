@@ -131,13 +131,20 @@
 		}
 	}
 
+	&__main,
+	&__info {
+		padding: 0 2em;
+		@media (max-width: 800px) {
+			padding: 0;
+		}
+	}
+
 	&__main {
 		position: relative;
 		flex: 1 1 35%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 0 2em;
 		&::before {
 			content: "";
 			display: block;
@@ -149,6 +156,12 @@
 			width: 1px;
 			background: black;
 		}
+		@media (max-width: 862px) {
+			&:before {
+				display: none;
+			}
+			padding: 0;
+		}
 	}
 
 	&__header {
@@ -156,17 +169,21 @@
 	}
 
 	&__title {
-		font-size: calc(40 / 16 * 1em);
+		font-size: clamp(35px, calc(40 / 1026 * 100vw), 40px);
 		font-weight: 900;
 		white-space: nowrap;
 		margin-bottom: 0.5em;
 		._color {
 			color: $green;
 		}
+		@media (max-width: 460px) {
+			white-space: unset;
+		}
 	}
 
 	&__desc {
 		transition-delay: 100ms;
+		margin-bottom: 2em;
 	}
 
 	&__quote {
@@ -212,7 +229,6 @@
 	}
 
 	&__info {
-		padding: 0 2em;
 		font-size: calc(15 / 16 * 1em);
 	}
 
@@ -237,7 +253,7 @@
 			}
 			@for $i from 1 to 4 {
 				&:nth-child(#{$i}) {
-					transition-delay: (100 * $i) + ms;
+					transition-delay: (50 * $i) + ms;
 				}
 			}
 		}

@@ -45,7 +45,7 @@
 
 		@for $i from 1 to 5 {
 			& > *:nth-child(#{$i}) {
-				transition-delay: (200 * $i) + ms;
+				transition-delay: (50 * $i) + ms;
 			}
 		}
 	}

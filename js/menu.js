@@ -92,8 +92,11 @@ setTimeout(() => {
 //============= cat ==============//
 const audio = document.createElement('audio');
 audio.src = '../assets/audio/Maxwell-the-Cat-Theme-djlunatique.com.mp3';
+
 const video = document.createElement('video');
 video.src = '../assets/video/cat.webm';
+
+
 video.classList.add('maxwell');
 video.loop = true;
 document.querySelector('.wrapper').prepend(video)
@@ -103,6 +106,11 @@ const moreBtns = document.querySelectorAll('._cat');
 moreBtns.forEach(btn => btn.addEventListener('click', maxwellPlay))
 
 function maxwellPlay(e) {
+	console.log(audio.readyState, video.readyState);
+	if (!audio.readyState && !video.readyState) {
+		audio.src = './assets/audio/Maxwell-the-Cat-Theme-djlunatique.com.mp3';
+		video.src = './assets/video/cat.webm';
+	}
 	audio.play();
 	video.play();
 	video.classList.add('play')
