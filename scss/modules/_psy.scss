@@ -37,7 +37,7 @@
 		}
 		@for $i from 1 to 6 {
 			li:nth-child(#{$i}) {
-				transition-delay: (100 * $i) + ms;
+				transition-delay: (50 * $i) + ms;
 			}
 		}
 	}
