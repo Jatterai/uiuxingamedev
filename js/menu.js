@@ -92,9 +92,11 @@ setTimeout(() => {
 //============= cat ==============//
 const audio = document.createElement('audio');
 audio.src = '../assets/audio/Maxwell-the-Cat-Theme-djlunatique.com.mp3';
+audio.playsInline = true;
 
 const video = document.createElement('video');
 video.src = '../assets/video/cat.webm';
+video.playsInline = true;
 
 
 video.classList.add('maxwell');
