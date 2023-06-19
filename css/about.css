@@ -756,7 +756,7 @@ body.locked {
   margin: 0 auto;
 }
 .levelup__title {
-  font-size: clamp(60px, 8.3333333333vw, 120px);
+  font-size: clamp(40px, 8.3333333333vw, 120px);
   font-family: "Hussar Plate";
   text-transform: uppercase;
   font-style: oblique;
@@ -765,9 +765,13 @@ body.locked {
 }
 .levelup__row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(30px, 7.8125vw, 100px);
+  row-gap: 30px;
 }
 .levelup__item {
+  flex: 1 0 275px;
   position: relative;
   transition: 300ms;
   top: 0;
@@ -780,26 +784,34 @@ body.locked {
 .levelup__item:last-child .levelup__label {
   background: #2459a9;
 }
-.levelup__item:hover {
-  top: -20px;
-}
-.levelup__item:hover .levelup__label span {
-  opacity: 1;
-  left: 0.5em;
+@media (min-width: 900px) {
+  .levelup__item:hover {
+    top: -20px;
+  }
+  .levelup__item:hover .levelup__label span {
+    opacity: 1;
+    left: 0.5em;
+  }
 }
 .levelup__img {
   width: 100%;
   aspect-ratio: 1/0.86;
+  max-height: 236px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
 }
+@media (max-width: 900px) {
+  .levelup__img {
+    max-height: 150px;
+  }
+}
 .levelup__label {
   position: relative;
   font-family: "Epilepsy Sans";
   font-weight: 900;
-  font-size: 2.25em;
+  font-size: clamp(30px, 2.8125vw, 36px);
   text-transform: capitalize;
   color: black;
   background: #0d9c5a;
@@ -815,6 +827,12 @@ body.locked {
   left: -100%;
   opacity: 0;
   color: white;
+}
+@media (hover: none) {
+  .levelup__label span {
+    opacity: 1;
+    left: 0.5em;
+  }
 }
 
 @keyframes dance {

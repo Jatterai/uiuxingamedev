@@ -225,7 +225,7 @@
 		@include container-xs;
 	}
 	&__title {
-		font-size: clamp(60px, calc(120 / 1440 * 100vw), 120px);
+		font-size: clamp(40px, calc(120 / 1440 * 100vw), 120px);
 		font-family: "Hussar Plate";
 		text-transform: uppercase;
 		font-style: oblique;
@@ -234,10 +234,14 @@
 	}
 	&__row {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: clamp(30px, calc(100 / 1280 * 100vw), 100px);
+		row-gap: 30px;
 	}
 
 	&__item {
+		flex: 1 0 275px;
 		position: relative;
 		transition: 300ms;
 		top: 0;
@@ -253,11 +257,13 @@
 				background: #2459a9;
 			}
 		}
-		&:hover {
-			top: -20px;
-			.levelup__label span {
-				opacity: 1;
-				left: 0.5em;
+		@media (min-width: 900px) {
+			&:hover {
+				top: -20px;
+				.levelup__label span {
+					opacity: 1;
+					left: 0.5em;
+				}
 			}
 		}
 	}
@@ -265,15 +271,19 @@
 	&__img {
 		width: 100%;
 		aspect-ratio: 1 / 0.86;
+		max-height: 236px;
 		object-fit: cover;
 		object-position: top;
+		@media (max-width: 900px) {
+			max-height: 150px;
+		}
 	}
 
 	&__label {
 		position: relative;
 		font-family: "Epilepsy Sans";
 		font-weight: 900;
-		font-size: calc(36 / 16 * 1em);
+		font-size: clamp(30px, calc(36 / 1280 * 100vw), 36px);
 		text-transform: capitalize;
 		color: black;
 		background: #0d9c5a;
@@ -288,6 +298,10 @@
 			left: -100%;
 			opacity: 0;
 			color: white;
+			@media (hover: none) {
+				opacity: 1;
+				left: 0.5em;
+			}
 		}
 	}
 }
