@@ -770,11 +770,14 @@ body.locked {
   margin: 0 auto;
   padding-block: clamp(50px, 6.9444444444vw, 100px);
   display: flex;
+  gap: 30px;
   justify-content: space-between;
   align-items: center;
 }
-.windows__slider {
-  flex: 0 0 80%;
+.windows__box {
+  flex: 1 0 80%;
+  display: flex;
+  flex-direction: column;
 }
 .windows__btn {
   flex: 0 0 50px;
@@ -796,11 +799,33 @@ body.locked {
     flex: 0 0 30px;
   }
 }
+@media (hover: none) {
+  .windows__btn {
+    display: none;
+  }
+}
 
 .slider {
   transition: 100ms;
   aspect-ratio: 938/527;
   background-size: cover;
+}
+.slider__dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.slider__dot {
+  width: 15px;
+  aspect-ratio: 1/1;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border-bottom: 2px solid white;
+  transition: 400ms;
+}
+.slider__dot.active {
+  background: white;
 }
 
 .development {

@@ -89,11 +89,17 @@
 		@include container-xs;
 		padding-block: clamp(50px, calc(100 / 1440 * 100vw), 100px);
 		display: flex;
+		gap: 30px;
 		justify-content: space-between;
 		align-items: center;
 	}
 	&__slider {
-		flex: 0 0 80%;
+	}
+
+	&__box {
+		flex: 1 0 80%;
+		display: flex;
+		flex-direction: column;
 	}
 	&__btn {
 		flex: 0 0 50px;
@@ -112,12 +118,33 @@
 		@media (max-width: 746px) {
 			flex: 0 0 30px;
 		}
+
+		@media (hover: none) {
+			display: none;
+		}
 	}
 }
 .slider {
 	transition: 100ms;
 	aspect-ratio: 938 / 527;
 	background-size: cover;
+	&__dots {
+		margin-top: 15px;
+		display: flex;
+		justify-content: center;
+		gap: 5px;
+	}
+	&__dot {
+		width: 15px;
+		aspect-ratio: 1 / 1;
+		background: rgba(255, 255, 255, 0.5);
+		border-radius: 50%;
+		border-bottom: 2px solid white;
+		transition: 400ms;
+		&.active {
+			background: white;
+		}
+	}
 }
 
 .development {
