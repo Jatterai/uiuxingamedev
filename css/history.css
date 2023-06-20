@@ -293,7 +293,7 @@ body.locked {
   bottom: 20%;
   left: 0%;
   transition: 400ms;
-  background: url("../../assets/img/IMG_0385.PNG") center bottom 10px/80% auto no-repeat, linear-gradient(to left, rgba(240, 234, 240, 0.95) 0%, rgba(240, 234, 240, 0.95) 100%);
+  background: url("../assets/img/IMG_0385.PNG") center bottom 10px/80% auto no-repeat, linear-gradient(to left, rgba(240, 234, 240, 0.95) 0%, rgba(240, 234, 240, 0.95) 100%);
   filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.393));
   z-index: 1000;
   display: flex;

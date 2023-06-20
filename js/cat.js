@@ -49,7 +49,7 @@ function maxwellPlay(e) {
 	}
 	audio.play();
 	video.play();
-	if (!cat_counter.className.includes('hide') && localStorage.catCount > 1) cat_counter.classList.add('hide');
+	if (!cat_counter.className.includes('hide') && localStorage.catCount > 0) cat_counter.classList.add('hide');
 	video.classList.add('play')
 	document.body.classList.add('locked')
 
