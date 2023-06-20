@@ -39,7 +39,6 @@ function maxwellPlay(e) {
 
 	if (!localStorage.catCount) localStorage.setItem('catCount', 0);
 	if (localStorage.catCount >= 10) {
-		cat_counter.remove();
 		return
 	};
 	const elementId = e.currentTarget.id;
