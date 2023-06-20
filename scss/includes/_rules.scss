@@ -201,3 +201,53 @@ body {
 		transform: translate(-58%, -55%) scale(1);
 	}
 }
+._cat {
+	cursor: pointer;
+}
+.cat__rules {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	max-width: 90%;
+	padding: 1em;
+	font-size: clamp(30px, calc(76 / 1280 * 100vw), 60px);
+	text-align: center;
+	color: white;
+	font-weight: 800;
+	font-family: "Epilepsy Sans";
+	background: $orange;
+	letter-spacing: 0.06em;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	border-top: 2px solid $lightyellow;
+	animation: catRules 0.5s cubic-bezier(0, 1.5, 1, 1.5) forwards;
+	transition: 500ms;
+	.cat__close {
+		content: "X";
+		top: 0;
+		right: 0;
+		position: absolute;
+		padding-left: 0.1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.3em;
+		aspect-ratio: 1 / 1;
+		color: red;
+		border-radius: 50%;
+		background: black;
+		border-top: 0.05em solid grey;
+		translate: 50% -50%;
+		cursor: pointer;
+	}
+}
+
+@keyframes catRules {
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
