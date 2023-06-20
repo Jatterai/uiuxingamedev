@@ -69,7 +69,7 @@ body.locked {
   border-radius: 40px;
   box-shadow: 0px 0px 0px 40px rgb(114, 203, 223);
   animation: showing 1s 1 forwards;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 @keyframes showing {
@@ -285,6 +285,58 @@ body.locked {
   border-top: 0.05em solid grey;
   translate: 50% -50%;
   cursor: pointer;
+}
+
+.catCounter {
+  position: fixed;
+  bottom: 20%;
+  left: 0%;
+  transition: 400ms;
+  background: url("../../assets/img/IMG_0385.PNG") center bottom 10px/80% auto no-repeat, linear-gradient(to left, rgba(240, 234, 240, 0.95) 0%, rgba(240, 234, 240, 0.95) 100%);
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.393));
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px 0 20px 20px;
+  padding: 0.15em 0.5em;
+  padding-bottom: 0;
+  font-size: clamp(60px, 9.375vw, 120px);
+  font-family: "Epilepsy Sans";
+  font-weight: 900;
+  color: #dca22d;
+  text-shadow: -3px -3px #c92600, 3px 3px #2f4399;
+  transform: translate(2%, 0);
+  opacity: 0;
+  visibility: hidden;
+}
+.catCounter.itson {
+  opacity: 1;
+  visibility: visible;
+}
+.catCounter.hide {
+  transform: translate(-100%, 0);
+}
+.catCounter::after {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/0.8;
+}
+.catCounter__content {
+  position: relative;
+  z-index: 2;
+}
+.catCounter__btn {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  font-weight: 900;
+  font-size: 40px;
+  background: rgba(240, 234, 240, 0.95);
+  border-radius: 0 40px 40px 0;
+  padding: 0 10px 0 0px;
 }
 
 @keyframes catRules {
