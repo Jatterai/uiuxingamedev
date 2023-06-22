@@ -258,7 +258,7 @@ body.locked {
   display: block;
   width: clamp(20px, 1.7361111111vw, 25px);
   aspect-ratio: 1/1;
-  background: url("../../assets/img/catstar.PNG") 0 0/contain no-repeat;
+  background: url("../assets/img/catstar.PNG") 0 0/contain no-repeat;
   position: absolute;
   top: 0;
   left: 50%;
