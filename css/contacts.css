@@ -155,6 +155,9 @@ body.locked {
 ._anim > span {
   display: block;
 }
+._anim.on {
+  overflow: visible;
+}
 ._anim.on ._anim_to-top,
 ._anim.on ._anim_to-right,
 ._anim.on ._anim_to-left {
@@ -245,7 +248,53 @@ body.locked {
 }
 
 ._cat {
+  position: relative;
+  z-index: 5;
   cursor: pointer;
+}
+._cat:hover:before {
+  content: "";
+  display: block;
+  width: clamp(20px, 1.7361111111vw, 25px);
+  aspect-ratio: 1/1;
+  background: url("../../assets/img/catstar.PNG") 0 0/contain no-repeat;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 50;
+  translate: -50% -100%;
+  scale: 0;
+  animation: hahaha 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 forwards;
+}
+@keyframes hahaha {
+  12% {
+    scale: 50%;
+    translate: -50% -200%;
+  }
+  25% {
+    scale: 100%;
+    translate: -250% -200%;
+  }
+  50% {
+    scale: 100%;
+    translate: 250% -200%;
+  }
+  62% {
+    scale: 100%;
+    translate: -250% -200%;
+  }
+  75% {
+    scale: 100%;
+    translate: 250% -200%;
+  }
+  87% {
+    scale: 50%;
+    translate: -50% -200%;
+  }
+  100% {
+    scale: 0%;
+    translate: -50% -100%;
+  }
 }
 
 .cat__rules {
